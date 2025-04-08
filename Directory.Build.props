@@ -1,0 +1,18 @@
+<Project>
+    <PropertyGroup>
+        <TargetFramework>net9.0</TargetFramework>
+        <LangVersion>latest</LangVersion>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+        <AnalysisLevel>latest</AnalysisLevel>
+        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+        <IsPackable>false</IsPackable>
+        <Company>Intelsoft</Company>
+        <Authors>Zhangeldy Kalkenov</Authors>
+        <Product>Intelsoft</Product>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+        <FileVersion>1.0.0.0</FileVersion>
+        <Configurations>Debug;Release</Configurations>
+    </PropertyGroup>
+</Project>
