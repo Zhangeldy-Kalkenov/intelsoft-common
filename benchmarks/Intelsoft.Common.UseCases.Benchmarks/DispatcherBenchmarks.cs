@@ -1,10 +1,9 @@
 using System.Reflection;
 using BenchmarkDotNet.Attributes;
-using Intelsoft.Common.UseCases;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Intelsoft.Common.Benchmarks;
+namespace Intelsoft.Common.UseCases.Benchmarks;
 
 public class CreateOrderRequest : IRequest<string>
 {
@@ -55,7 +54,7 @@ public class DispatcherBenchmarks
 
         _useCaseDispatcher = services.BuildServiceProvider().GetRequiredService<IUseCaseDispatcher>() ??
                              throw new InvalidOperationException("IUseCaseDispatcher is null");
-
+        
         _mediator = services.BuildServiceProvider().GetRequiredService<IMediator>() ??
                     throw new InvalidOperationException("IMediator is null");
     }
@@ -65,12 +64,12 @@ public class DispatcherBenchmarks
     [Benchmark]
     public async Task<string> UseCaseDispatcher_UseCase()
     {
-        return await _useCaseDispatcher!.ExecuteAsync<CreateOrderRequest, string>(_request).ConfigureAwait(false);
+        return await _useCaseDispatcher!.ExecuteAsync<CreateOrderRequest, string>(_request);
     }
 
     [Benchmark]
     public async Task<string> MediatR_Dispatch()
     {
-        return await _mediator!.Send(_request).ConfigureAwait(false);
+        return await _mediator!.Send(_request);
     }
 }

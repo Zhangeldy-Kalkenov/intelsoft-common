@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <FrameworkReference Include="Microsoft.AspNetCore.App"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.OpenApi"/>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Intelsoft.Common.Results\Intelsoft.Common.Results.csproj"/>
+    <ProjectReference Include="..\Intelsoft.Common.UseCases\Intelsoft.Common.UseCases.csproj"/>
+  </ItemGroup>
+
+</Project>
