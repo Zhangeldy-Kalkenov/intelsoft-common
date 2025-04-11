@@ -5,4 +5,6 @@ namespace Intelsoft.Common.IntegrationEvents.Contracts;
 /// </summary>
 public interface IIntegrationEvent
 {
+    public DateTime OccurredOn { get; init; }
+    public string? CorrelationId { get; init; }
 }

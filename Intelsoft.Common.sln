@@ -36,6 +36,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelsoft.Common.EntityFram
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelsoft.Common.Outbox", "src\Intelsoft.Common.Outbox\Intelsoft.Common.Outbox.csproj", "{1A5EA5B5-E2C0-46D5-8428-1A4582D28B1D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelsoft.Common.Outbox.EntityFrameworkCore", "src\Intelsoft.Common.Outbox.EntityFrameworkCore\Intelsoft.Common.Outbox.EntityFrameworkCore.csproj", "{9BD41CD9-3C08-41DE-ADAF-6FEDAA08EE08}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -54,6 +56,7 @@ Global
 		{AF37FD0A-C437-4C09-A021-11ED28B325D4} = {A59EBED5-6969-45D4-8495-8E84A9FB7E39}
 		{F721DA09-AB8A-426F-9F1B-DCFF93BFCA8E} = {A59EBED5-6969-45D4-8495-8E84A9FB7E39}
 		{1A5EA5B5-E2C0-46D5-8428-1A4582D28B1D} = {A59EBED5-6969-45D4-8495-8E84A9FB7E39}
+		{9BD41CD9-3C08-41DE-ADAF-6FEDAA08EE08} = {A59EBED5-6969-45D4-8495-8E84A9FB7E39}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BACD21F6-42DF-495B-8BFF-7D88F7E43D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -104,5 +107,9 @@ Global
 		{1A5EA5B5-E2C0-46D5-8428-1A4582D28B1D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1A5EA5B5-E2C0-46D5-8428-1A4582D28B1D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1A5EA5B5-E2C0-46D5-8428-1A4582D28B1D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BD41CD9-3C08-41DE-ADAF-6FEDAA08EE08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD41CD9-3C08-41DE-ADAF-6FEDAA08EE08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD41CD9-3C08-41DE-ADAF-6FEDAA08EE08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD41CD9-3C08-41DE-ADAF-6FEDAA08EE08}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -10,6 +10,8 @@ Keeps event definitions cleanly separated from their transport and infrastructur
 ```csharp
 public interface IIntegrationEvent
 {
+    public DateTime OccurredOn { get; init; }
+    public string? CorrelationId { get; init; }
 }
 ```
 
