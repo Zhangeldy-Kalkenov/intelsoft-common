@@ -28,6 +28,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelsoft.Common.Results.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelsoft.Common.SeedWork", "src\Intelsoft.Common.SeedWork\Intelsoft.Common.SeedWork.csproj", "{391DD5E4-0B0E-404F-874E-C7AE1E57171E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelsoft.Common.IntegrationEvents.Contracts", "src\Intelsoft.Common.IntegrationEvents.Contracts\Intelsoft.Common.IntegrationEvents.Contracts.csproj", "{54CDA4BC-6035-4400-BA8A-E55BDA58A386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intelsoft.Common.IntegrationEvents", "src\Intelsoft.Common.IntegrationEvents\Intelsoft.Common.IntegrationEvents.csproj", "{AF37FD0A-C437-4C09-A021-11ED28B325D4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +46,8 @@ Global
 		{6A9618E8-5EC0-41C3-A0B5-56F636E0997B} = {D6980348-8666-49C9-8404-A79A254E842E}
 		{E2BDDBBE-C370-4629-AC4A-C2F5B69FD664} = {D6980348-8666-49C9-8404-A79A254E842E}
 		{391DD5E4-0B0E-404F-874E-C7AE1E57171E} = {A59EBED5-6969-45D4-8495-8E84A9FB7E39}
+		{54CDA4BC-6035-4400-BA8A-E55BDA58A386} = {A59EBED5-6969-45D4-8495-8E84A9FB7E39}
+		{AF37FD0A-C437-4C09-A021-11ED28B325D4} = {A59EBED5-6969-45D4-8495-8E84A9FB7E39}
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{BACD21F6-42DF-495B-8BFF-7D88F7E43D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -76,5 +82,13 @@ Global
 		{391DD5E4-0B0E-404F-874E-C7AE1E57171E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{391DD5E4-0B0E-404F-874E-C7AE1E57171E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{391DD5E4-0B0E-404F-874E-C7AE1E57171E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54CDA4BC-6035-4400-BA8A-E55BDA58A386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54CDA4BC-6035-4400-BA8A-E55BDA58A386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54CDA4BC-6035-4400-BA8A-E55BDA58A386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54CDA4BC-6035-4400-BA8A-E55BDA58A386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AF37FD0A-C437-4C09-A021-11ED28B325D4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF37FD0A-C437-4C09-A021-11ED28B325D4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF37FD0A-C437-4C09-A021-11ED28B325D4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF37FD0A-C437-4C09-A021-11ED28B325D4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
