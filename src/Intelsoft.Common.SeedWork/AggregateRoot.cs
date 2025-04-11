@@ -7,7 +7,7 @@ namespace Intelsoft.Common.SeedWork;
 ///     An aggregate root is an entity that controls access to other entities within the aggregate.
 /// </summary>
 /// <typeparam name="TId">The type of the entity identifier.</typeparam>
-public abstract class AggregateRoot<TId> : Entity<TId>
+public abstract class AggregateRoot<TId> : Entity<TId>, IHasDomainEvents
     where TId : notnull
 {
     private List<IDomainEvent>? _domainEvents;
