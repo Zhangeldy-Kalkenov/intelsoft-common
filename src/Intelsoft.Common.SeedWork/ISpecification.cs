@@ -12,7 +12,7 @@ public interface ISpecification<T>
     /// <summary>
     ///     Gets the filtering criteria for the specification.
     /// </summary>
-    Expression<Func<T, bool>> Criteria { get; }
+    Expression<Func<T, bool>>? Criteria { get; }
 
     /// <summary>
     ///     Gets a collection of expression-based includes for eager loading.
