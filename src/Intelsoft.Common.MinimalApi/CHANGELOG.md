@@ -1,4 +1,4 @@
-# Changelog — Intelsoft.Common.UseCases.MinimalApi
+# Changelog — Intelsoft.Common.MinimalApi
 
 ## [1.0.0] - 2025-04-10
 
@@ -11,7 +11,3 @@
 - Clean architecture–oriented design, supporting separation of concerns and scalability
 
 ---
-
-## License
-
-MIT License

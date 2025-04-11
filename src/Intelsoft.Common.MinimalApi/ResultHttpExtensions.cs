@@ -2,7 +2,7 @@ using Intelsoft.Common.Results;
 using Microsoft.AspNetCore.Http;
 using IResult = Microsoft.AspNetCore.Http.IResult;
 
-namespace Intelsoft.Common.UseCases.MinimalApi;
+namespace Intelsoft.Common.MinimalApi;
 
 public static class ResultHttpExtensions
 {

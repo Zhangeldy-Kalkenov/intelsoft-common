@@ -1,7 +1,7 @@
-using Microsoft.Extensions.DependencyInjection;
 using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace Intelsoft.Common.UseCases.MinimalApi;
+namespace Intelsoft.Common.MinimalApi;
 
 public static class ServiceCollectionExtensions
 {

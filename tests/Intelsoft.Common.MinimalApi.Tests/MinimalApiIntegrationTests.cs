@@ -1,6 +1,7 @@
 ﻿using System.Net;
 using System.Net.Http.Json;
 using Intelsoft.Common.Results;
+using Intelsoft.Common.UseCases;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
@@ -8,7 +9,7 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualStudio.TestPlatform.TestHost;
 
-namespace Intelsoft.Common.UseCases.MinimalApi.Tests;
+namespace Intelsoft.Common.MinimalApi.Tests;
 
 public class MinimalApiIntegrationTests
 {

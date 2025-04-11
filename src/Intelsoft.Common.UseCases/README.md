@@ -1,12 +1,17 @@
 # Intelsoft.Common.UseCases
 
-🚀 A lightweight and high-performance Use Case dispatcher for Clean Architecture and DDD in .NET.
+A high-performance, middleware-capable use case dispatcher for Clean Architecture and DDD applications in .NET.
+Built for developers who want simplicity, speed, and structure — without magic or reflection.
 
-- ⚡ Faster than MediatR (~40% faster)
-- 🧩 Middleware support (logging, validation, metrics, etc.)
-- 🧼 No reflection, no magic — just clean DI
-- ✅ Zero-allocation pipeline for hot paths
-- 🧠 Built for monoliths, microservices, CQRS and pure CRUD apps
+---
+
+## ✨ Highlights
+
+- 🚀 ~40% faster than MediatR (based on benchmarks)
+- 🧩 First-class middleware support (logging, validation, metrics, etc.)
+- ✅ Clean DI, zero reflection, no scanning magic
+- 🧼 Minimal allocations — optimized for hot paths
+- 🔌 Seamlessly fits into monoliths, microservices, CQRS, or CRUD-style applications
 
 ---
 
@@ -18,7 +23,7 @@ dotnet add package Intelsoft.Common.UseCases
 
 ---
 
-## 🧱 Use Case Flow
+## 📌 Execution Flow
 
 ```text
 Controller → UseCaseDispatcher → IUseCase<TRequest, TResponse> → Result
@@ -28,7 +33,7 @@ Controller → UseCaseDispatcher → IUseCase<TRequest, TResponse> → Result
 
 ## 🚀 Quick Start
 
-### 1. Define your request and response:
+### 1. Define a Request & Response:
 
 ```csharp
 public class CreateOrderRequest
@@ -45,7 +50,7 @@ public class CreateOrderResponse
 
 ---
 
-### 2. Create your Use Case:
+### 2. Implement the Use Case:
 
 ```csharp
 public class CreateOrderUseCase : IUseCase<CreateOrderRequest, CreateOrderResponse>
@@ -60,7 +65,7 @@ public class CreateOrderUseCase : IUseCase<CreateOrderRequest, CreateOrderRespon
 
 ---
 
-### 3. Register Use Cases and Middleware:
+### 3. Register Use Cases & Middleware:
 
 ```csharp
 builder.Services
@@ -70,7 +75,7 @@ builder.Services
 
 ---
 
-### 4. Dispatch inside a controller:
+### 4. Dispatch in Controller:
 
 ```csharp
 [ApiController]
@@ -116,7 +121,7 @@ public class LoggingMiddleware : IUseCaseMiddleware
 
 ---
 
-## 🔧 Interfaces
+## 🧠 Interfaces
 
 ### IUseCase
 
@@ -153,9 +158,9 @@ public interface IUseCaseDispatcher
 
 ---
 
-## 📈 Benchmark Results
+## 📈 Benchmark
 
-Tested with .NET 9.0 · Apple M1 Pro · Release mode · BenchmarkDotNet
+Tested on .NET 9 · Apple M1 Pro · Release build · BenchmarkDotNet
 
 | Method               | Mean     | Allocated |
 |----------------------|----------|-----------|
@@ -164,9 +169,9 @@ Tested with .NET 9.0 · Apple M1 Pro · Release mode · BenchmarkDotNet
 
 ---
 
-## 🧪 Testing Use Cases
+## 🧪 Testing
 
-Use Cases are fully testable without controllers or infrastructure.
+Use cases can be tested in isolation — no controller or infrastructure needed:
 
 ```csharp
 [Fact]
@@ -180,41 +185,21 @@ public async Task Should_Create_Order()
 
 ---
 
-## 📦 Recommended Project Structure
+## ✅ Best Practices
 
-```text
-src/
-├── Application/
-│   └── UseCases/
-│       └── CreateOrder/
-│           └── CreateOrderUseCase.cs
-├── Infrastructure/
-│   └── DI/
-│       └── ServiceCollectionExtensions.cs
-├── WebApi/
-│   └── Controllers/
-│       └── OrdersController.cs
-```
-
----
-
-## ✅ Use Case Best Practices
-
-- UseCases should contain only business logic
-- Keep controller thin — just dispatch the use case
-- Use middleware for cross-cutting concerns:
+- Keep Use Cases small and focused on business logic
+- Avoid service location — use constructor injection
+- Let controllers just dispatch and return
+- Use middleware for:
     - Logging
     - Validation
-    - Metrics
-    - Retry/Fallback
-- Keep input/output clean (DTOs or primitives)
+    - Retry / metrics
+- Prefer DTOs over domain types at the boundary
 
 ---
 
 ## 📄 License
 
-MIT License · © 2025 Intelsoft
+MIT License · © Intelsoft
 
----
-
-Contributions, feedback, and issues are welcome!
+All feedback and contributions are welcome.

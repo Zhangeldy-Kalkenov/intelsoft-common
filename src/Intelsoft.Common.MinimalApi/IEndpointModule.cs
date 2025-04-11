@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Routing;
 
-namespace Intelsoft.Common.UseCases.MinimalApi;
+namespace Intelsoft.Common.MinimalApi;
 
 public interface IEndpointModule
 {

@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Intelsoft.Common.UseCases.MinimalApi\Intelsoft.Common.UseCases.MinimalApi.csproj"/>
+    <ProjectReference Include="..\..\src\Intelsoft.Common.MinimalApi\Intelsoft.Common.MinimalApi.csproj" />
   </ItemGroup>
 
 </Project>

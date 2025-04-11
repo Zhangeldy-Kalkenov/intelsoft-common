@@ -1,8 +1,8 @@
-using Microsoft.AspNetCore.Builder;
 using System.Reflection;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Intelsoft.Common.UseCases.MinimalApi;
+namespace Intelsoft.Common.MinimalApi;
 
 public static class EndpointModuleExtensions
 {
