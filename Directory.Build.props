@@ -23,4 +23,8 @@
     <PackageIcon>../../assets/logo.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/zhangeldy-kalkenov/nomad-common/main/assets/logo.png</PackageIconUrl>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../assets/logo.png" Pack="true" PackagePath="\"/>
+  </ItemGroup>
 </Project>
