@@ -8,8 +8,7 @@
     <AnalysisLevel>latest</AnalysisLevel>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
     <Configurations>Debug;Release</Configurations>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <Version>1.0.0.0</Version>
     <IsPackable>true</IsPackable>
     <Company>Nomad</Company>
     <Authors>Zhangeldy Kalkenov</Authors>
