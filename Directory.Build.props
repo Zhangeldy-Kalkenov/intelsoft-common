@@ -20,7 +20,7 @@
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <IncludeSymbols>true</IncludeSymbols>
     <IncludeSource>true</IncludeSource>
-    <PackageIcon>../../assets/logo.png</PackageIcon>
+    <PackageIcon>logo.png</PackageIcon>
     <PackageIconUrl>https://raw.githubusercontent.com/zhangeldy-kalkenov/nomad-common/main/assets/logo.png</PackageIconUrl>
   </PropertyGroup>
 
