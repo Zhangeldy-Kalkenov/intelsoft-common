@@ -1,0 +1,67 @@
+name: Publish NuGet Package (Independent)
+
+on:
+  push:
+    tags:
+      - '*@v*.*.*'  # Example: Nomad.Common.Results@v1.2.3
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Parse tag into package and version
+        id: tag
+        run: |
+          TAG=${GITHUB_REF#refs/tags/}
+          PACKAGE_NAME=$(echo "$TAG" | cut -d@ -f1)
+          VERSION=$(echo "$TAG" | cut -d@ -f2)
+
+          echo "Package: $PACKAGE_NAME"
+          echo "Version: $VERSION"
+
+          echo "package_name=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '9.0.x'
+
+      - name: Find .csproj file
+        id: project
+        run: |
+          PROJECT_PATH=$(find src -type f -name "${{ steps.tag.outputs.package_name }}.csproj" | head -n 1)
+          if [ -z "$PROJECT_PATH" ]; then
+            echo "Project file for '${{ steps.tag.outputs.package_name }}' not found."
+            exit 1
+          fi
+          echo "project_path=$PROJECT_PATH" >> $GITHUB_OUTPUT
+          echo "Found: $PROJECT_PATH"
+
+      - name: Restore dependencies
+        run: dotnet restore "${{ steps.project.outputs.project_path }}"
+
+      - name: Build project
+        run: dotnet build "${{ steps.project.outputs.project_path }}" --configuration Release --no-restore
+
+      - name: Pack NuGet package
+        run: |
+          dotnet pack "${{ steps.project.outputs.project_path }}" \
+            --configuration Release \
+            --no-build \
+            -p:PackageVersion=${{ steps.tag.outputs.version }} \
+            --output ./nupkgs
+
+      - name: Push to NuGet
+        run: |
+          for pkg in ./nupkgs/*.nupkg; do
+            echo "📤 Publishing $pkg..."
+            dotnet nuget push "$pkg" \
+              --api-key ${{ secrets.NUGET_API_KEY }} \
+              --source https://api.nuget.org/v3/index.json \
+              --skip-duplicate
+          done
