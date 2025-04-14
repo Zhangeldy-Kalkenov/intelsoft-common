@@ -1,13 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Nomad.Common.Outbox</PackageId>
+    <Description>Outbox pattern abstraction for message delivery</Description>
+    <PackageTags>outbox;messaging;nomad</PackageTags>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Nomad.Common.IntegrationEvents.Contracts\Nomad.Common.IntegrationEvents.Contracts.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nomad.Common.IntegrationEvents.Contracts\Nomad.Common.IntegrationEvents.Contracts.csproj"/>
+  </ItemGroup>
 
 </Project>

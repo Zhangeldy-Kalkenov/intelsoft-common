@@ -1,17 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-    <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>Nomad.Common.EntityFrameworkCore</PackageId>
+    <Description>Extensions and repositories for Entity Framework Core in Nomad projects</Description>
+    <PackageTags>efcore;repository;nomad</PackageTags>
+  </PropertyGroup>
 
-    <ItemGroup>
-      <PackageReference Include="Microsoft.EntityFrameworkCore" />
-    </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore"/>
+  </ItemGroup>
 
-    <ItemGroup>
-      <ProjectReference Include="..\Nomad.Common.SeedWork\Nomad.Common.SeedWork.csproj" />
-    </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Nomad.Common.SeedWork\Nomad.Common.SeedWork.csproj"/>
+  </ItemGroup>
 
 </Project>

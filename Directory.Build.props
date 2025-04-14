@@ -1,18 +1,27 @@
 <Project>
-    <PropertyGroup>
-        <TargetFramework>net9.0</TargetFramework>
-        <LangVersion>latest</LangVersion>
-        <Nullable>enable</Nullable>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-        <AnalysisLevel>latest</AnalysisLevel>
-        <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-        <IsPackable>false</IsPackable>
-        <Company>Nomad</Company>
-        <Authors>Zhangeldy Kalkenov</Authors>
-        <Product>Nomad</Product>
-        <AssemblyVersion>1.0.0.0</AssemblyVersion>
-        <FileVersion>1.0.0.0</FileVersion>
-        <Configurations>Debug;Release</Configurations>
-    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AnalysisLevel>latest</AnalysisLevel>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <Configurations>Debug;Release</Configurations>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+    <FileVersion>1.0.0.0</FileVersion>
+    <IsPackable>true</IsPackable>
+    <Company>Nomad</Company>
+    <Authors>Zhangeldy Kalkenov</Authors>
+    <Product>Nomad</Product>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/zhangeldy-kalkenov/nomad-common</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/zhangeldy-kalkenov/nomad-common.git</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <IncludeSymbols>true</IncludeSymbols>
+    <IncludeSource>true</IncludeSource>
+    <PackageIcon>assets/logo.png</PackageIcon>
+    <PackageIconUrl>https://raw.githubusercontent.com/zhangeldy-kalkenov/nomad-common/main/assets/logo.png</PackageIconUrl>
+  </PropertyGroup>
 </Project>
