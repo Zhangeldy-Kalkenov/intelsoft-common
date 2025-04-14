@@ -14,9 +14,9 @@ public static class ResultHttpExtensions
         return result.FailureReason?.Type switch
         {
             ErrorType.Validation => TypedResults.BadRequest(result.FailureReason),
-            ErrorType.NotFound   => TypedResults.NotFound(result.FailureReason),
-            ErrorType.Conflict   => TypedResults.Conflict(result.FailureReason),
-            _                    => TypedResults.Problem(
+            ErrorType.NotFound => TypedResults.NotFound(result.FailureReason),
+            ErrorType.Conflict => TypedResults.Conflict(result.FailureReason),
+            _ => TypedResults.Problem(
                 title: result.FailureReason?.Type.ToString(),
                 detail: result.FailureReason?.Message,
                 statusCode: StatusCodes.Status500InternalServerError)
@@ -31,13 +31,39 @@ public static class ResultHttpExtensions
         return result.FailureReason?.Type switch
         {
             ErrorType.Validation => TypedResults.BadRequest(result.FailureReason),
-            ErrorType.NotFound   => TypedResults.NotFound(result.FailureReason),
-            ErrorType.Conflict   => TypedResults.Conflict(result.FailureReason),
-            _                    => TypedResults.Problem(
+            ErrorType.NotFound => TypedResults.NotFound(result.FailureReason),
+            ErrorType.Conflict => TypedResults.Conflict(result.FailureReason),
+            _ => TypedResults.Problem(
                 title: result.FailureReason?.Type.ToString(),
                 detail: result.FailureReason?.Message,
                 statusCode: StatusCodes.Status500InternalServerError)
         };
+    }
+
+    public static IResult ToHttpResult<T>(this PagedResult<T> result)
+    {
+        if (!result.Succeeded)
+        {
+            return result.FailureReason?.Type switch
+            {
+                ErrorType.Validation => TypedResults.BadRequest(result.FailureReason),
+                ErrorType.NotFound => TypedResults.NotFound(result.FailureReason),
+                ErrorType.Conflict => TypedResults.Conflict(result.FailureReason),
+                _ => TypedResults.Problem(
+                    title: result.FailureReason?.Type.ToString(),
+                    detail: result.FailureReason?.Message,
+                    statusCode: StatusCodes.Status500InternalServerError)
+            };
+        }
+
+        var response = new PagedResponse<T>(
+            result.Items ?? [],
+            result.TotalCount,
+            result.PageSize,
+            result.PageNumber
+        );
+
+        return TypedResults.Ok(response);
     }
 
     public static IResult ToHttpResult<T>(this Error error) =>

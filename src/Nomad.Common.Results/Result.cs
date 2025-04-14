@@ -84,3 +84,64 @@ public readonly record struct Result<T> : IResult
     public static implicit operator Result<T>(T value) => Success(value);
     public static implicit operator Result<T>(Error error) => Failure(error);
 }
+
+/// <summary>
+///     Represents a paginated result of an operation.
+/// </summary>
+/// <typeparam name="T">The type of the items returned on success.</typeparam>
+public readonly record struct PagedResult<T> : IResult
+{
+    /// <inheritdoc />
+    public bool Succeeded { get; init; }
+
+    /// <inheritdoc />
+    public bool Failed => !Succeeded;
+
+    /// <inheritdoc />
+    public Error? FailureReason { get; init; }
+
+    /// <summary>
+    ///     The list of items returned on success.
+    /// </summary>
+    public IReadOnlyList<T>? Items { get; init; }
+
+    /// <summary>
+    ///     The total number of items in the data source.
+    /// </summary>
+    public int TotalCount { get; init; }
+
+    /// <summary>
+    ///     The number of items per page.
+    /// </summary>
+    public int PageSize { get; init; }
+
+    /// <summary>
+    ///     The current page index (starting from 1).
+    /// </summary>
+    public int PageNumber { get; init; }
+
+    /// <summary>
+    ///     Creates a successful paged result.
+    /// </summary>
+    public static PagedResult<T> Success(
+        IReadOnlyList<T> items,
+        int totalCount,
+        int pageSize,
+        int pageNumber) =>
+        new()
+        {
+            Succeeded = true,
+            Items = items,
+            TotalCount = totalCount,
+            PageSize = pageSize,
+            PageNumber = pageNumber
+        };
+
+    /// <summary>
+    ///     Creates a failed paged result with the specified error.
+    /// </summary>
+    public static PagedResult<T> Failure(Error error) =>
+        new() { Succeeded = false, FailureReason = error };
+
+    public static implicit operator PagedResult<T>(Error error) => Failure(error);
+}
