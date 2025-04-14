@@ -8,9 +8,9 @@
         <AnalysisLevel>latest</AnalysisLevel>
         <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
         <IsPackable>false</IsPackable>
-        <Company>Intelsoft</Company>
+        <Company>Nomad</Company>
         <Authors>Zhangeldy Kalkenov</Authors>
-        <Product>Intelsoft</Product>
+        <Product>Nomad</Product>
         <AssemblyVersion>1.0.0.0</AssemblyVersion>
         <FileVersion>1.0.0.0</FileVersion>
         <Configurations>Debug;Release</Configurations>
