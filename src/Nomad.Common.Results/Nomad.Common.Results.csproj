@@ -4,6 +4,9 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <PackageId>Nomad.Common.Results</PackageId>
+    <Description>Functional Result pattern implementation for error handling</Description>
+    <PackageTags>result;error-handling;functional;nomad</PackageTags>
   </PropertyGroup>
 
 </Project>
